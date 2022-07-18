@@ -1,5 +1,5 @@
 ## **Semantic enrichment demonstrator**
----
+
 The notion of **multiple aspect trajectory** (MAT) has
 been recently introduced in the literature to represent movement
 data that is heavily semantically enriched with dimensions
@@ -17,14 +17,12 @@ that it is possible to devise a semantic enrichment processor that is able
 to enrich trajectories with multiple aspects, and that it is able to
 use of a variety of external data sources during such process.
 
----
 
 ### **Installation procedure**
 
-To run the demonstrator one must first set up a virtual environment that includes the modules used by the demonstrator
+To run the demonstrator one must first set up a virtual environment that includes the modules required by the demonstrator
 during its execution. For more information we refer the reader to the deliverable 4.7, version 1.
 
----
 
 ### **Usage**
 
