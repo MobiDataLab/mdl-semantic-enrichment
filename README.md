@@ -18,13 +18,13 @@ to enrich trajectories with multiple aspects, and that it is able to
 use of a variety of external data sources during such process.
 
 
-### **Usage**
-
-To use ```MAT-Builder``` with the graphical interface, run ```mat_builder.py```
-
-
-### **Requirements**
+### **Installation procedure**
 ---
-To run MAT-Builder install requirements.
+To run the demonstrator one must first set up a virtual environment that includes the modules used by the demonstrator
+during its execution. For more information we refer the reader to the deliverable 4.4.
 
-```pip install requirements.txt```
+
+### **Usage**
+---
+To use the demonstrator one must first activate the virtual environment
+that has been prepared during the installation procedure, and then type ```python mat_builder.py```
