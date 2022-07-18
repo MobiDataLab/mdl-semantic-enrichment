@@ -18,13 +18,13 @@ to enrich trajectories with multiple aspects, and that it is able to
 use of a variety of external data sources during such process.
 
 
-### **Installation procedure**
+## **Installation procedure**
 
 To run the demonstrator one must first set up a virtual environment that includes the modules required by the demonstrator
 during its execution. For more information we refer the reader to the deliverable 4.7, version 1.
 
 
-### **Usage**
+## **Usage**
 
 To use the demonstrator one must first open a command line, then activate the virtual environment
 that has been prepared during the installation procedure, and finally type ```python mat_builder.py```.
