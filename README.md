@@ -28,5 +28,6 @@ during its execution. For more information we refer the reader to the deliverabl
 
 ### **Usage**
 
-To use the demonstrator one must first activate the virtual environment
-that has been prepared during the installation procedure, and then type ```python mat_builder.py```
+To use the demonstrator one must first open a command line, then activate the virtual environment
+that has been prepared during the installation procedure, and finally type ```python mat_builder.py```.
+We refer the reader to the deliverable 4.4 for more information on how to use the demonstrator.
