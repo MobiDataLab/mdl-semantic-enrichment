@@ -22,7 +22,7 @@ use of a variety of external data sources during such process.
 ### **Installation procedure**
 
 To run the demonstrator one must first set up a virtual environment that includes the modules used by the demonstrator
-during its execution. For more information we refer the reader to the deliverable 4.4.
+during its execution. For more information we refer the reader to the deliverable 4.7, version 1.
 
 ---
 
@@ -30,4 +30,4 @@ during its execution. For more information we refer the reader to the deliverabl
 
 To use the demonstrator one must first open a command line, then activate the virtual environment
 that has been prepared during the installation procedure, and finally type ```python mat_builder.py```.
-We refer the reader to the deliverable 4.4 for more information on how to use the demonstrator.
+We refer the reader to the deliverable 4.7, version 1, for more information on how to use the demonstrator.
