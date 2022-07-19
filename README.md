@@ -18,7 +18,7 @@ to enrich trajectories with multiple aspects, and that it is able to
 use of a variety of external data sources during such process.
 
 
-## **Installation procedure**
+## **Demonstrator installation procedure**
 
 The semantic enrichment demonstrator consists of a set of Python scripts (plus a set of additional assets) which make exclusively use of open-source libraries. In the following we illustrate the installation procedure needed to execute the semantic enrichment demonstrator. The installation procedure has been tested on Windows 10, Ubuntu (version > 20.x), and macOS.
 
@@ -29,7 +29,7 @@ The semantic enrichment demonstrator consists of a set of Python scripts (plus a
 3.	Once the environment has been created, the user must activate it in the prompt by typing ```conda activate name_environment```. The user is now able to execute and use the demonstrator.
 
 
-## **Usage**
+## **Use of the demonstrator**
 
 To use the demonstrator one must first open a command line and then activate the virtual environment that has been prepared during the installation procedure. Once this is done, the user will have to type ```python mat_builder.py```, which in turn will start the demonstrator execution. In the command line it will appear an URL  pointing to the demonstrator interface, and that the user will be able to access with any web browser of preference. 
 We refer the reader to the deliverable 4.7, version 1, for more information on how to use the demonstrator interface.
