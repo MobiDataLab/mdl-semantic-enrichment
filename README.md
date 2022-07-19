@@ -20,8 +20,14 @@ use of a variety of external data sources during such process.
 
 ## **Installation procedure**
 
-To run the demonstrator one must first set up a virtual environment that includes the modules required by the demonstrator
-during its execution. For more information we refer the reader to the deliverable 4.7, version 1.
+The semantic enrichment demonstrator consists of a set of Python scripts which make exclusively use of open-source libraries. In the following we illustrate the installation procedure needed to execute the semantic enrichment demonstrator. The installation procedure has been tested on Windows 10, Ubuntu (version > 20.x), and macOS.
+
+1. The first step requires installing a Python distribution that includes a package manager. To this end we recommend installing Anaconda, a cross-platform Python package manager and environment-management system which satisfies the above criteria.
+
+2. Once Anaconda has been installed, the next step requires to set up a virtual environment containing the open-source libraries that our demonstrator requires during its execution. To this end we provide a YAML file, mat_builder.yml, that can be used to set the environment up. More precisely, the user must first open an Anaconda powershell prompt. Then, the user must type in the prompt conda env create -f path\mat_builder.yml -n name_environment, where path represents the path in which mat_builder.yml is located, while name_environment represents the name the user wants to assign to the virtual environment.
+We report that the open-source libraries relevant to the demonstrator will be relevant to the semantic enrichment processor as well. These libraries are Pandas , Geopandas , scikit-learn , scikit-mobility , rdflib , PTRAIL , and Dash .
+
+3.	Once the environment has been created, the user must activate it in the prompt by typing conda activate name_environment. The user is now able to execute and use the demonstrator.
 
 
 ## **Usage**
