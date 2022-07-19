@@ -31,6 +31,5 @@ The semantic enrichment demonstrator consists of a set of Python scripts which m
 
 ## **Usage**
 
-To use the demonstrator one must first open a command line, then activate the virtual environment
-that has been prepared during the installation procedure, and finally type ```python mat_builder.py```.
-We refer the reader to the deliverable 4.7, version 1, for more information on how to use the demonstrator.
+To use the demonstrator one must first open a command line and then activate the virtual environment that has been prepared during the installation procedure. Once this is done, the user will have to type ```python mat_builder.py```, which in turn will start the demonstrator execution. In the command line it will appear an URL  pointing to the demonstrator interface, and that the user will be able to access with any web browser of preference. 
+We refer the reader to the deliverable 4.7, version 1, for more information on how to use the demonstrator interface.
