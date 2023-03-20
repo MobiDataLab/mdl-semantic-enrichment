@@ -1,4 +1,4 @@
-## **Semantic enrichment demonstrator**
+## **Semantic enrichment processor**
 
 The notion of **multiple aspect trajectory** (MAT) has
 been recently introduced in the literature to represent movement
@@ -7,8 +7,8 @@ data that is heavily semantically enriched with dimensions
 stops, moves, weather, traffic, events, and points of interest).
 Aspects may be large in number, heterogeneous, or structurally
 complex. Although there is a growing volume of literature
-addressing the modelling and analysis of multiple aspect tra-
-jectories, the community suffers from a general lack of publicly
+addressing the modelling and analysis of multiple aspect trajectories, 
+the community suffers from a general lack of publicly
 available datasets. This is due to privacy concerns that make it
 difficult to publish such type of data, and to the lack of tools that
 are capable of linking raw spatio-temporal data to different types
@@ -20,13 +20,13 @@ use of a variety of external data sources during such process.
 
 ## **Semantic enrichment processor installation procedure**
 
-The semantic enrichment processor consists of a set of Python scripts (plus a set of additional assets) which make exclusively use of open-source libraries. In the following we illustrate the installation procedure needed to execute the semantic enrichment demonstrator. The installation procedure has been tested on Windows 10, Ubuntu (version > 20.x), and macOS.
+The semantic enrichment processor consists of a set of Python scripts (plus a set of additional assets) which make exclusively use of open-source libraries. In the following we illustrate the installation procedure. The procedure has been tested on Windows 10, Ubuntu (version > 20.x), and macOS.
 
 1. The first step requires installing a Python distribution that includes a package manager. To this end we recommend installing [Anaconda](https://www.anaconda.com/products/distribution), a cross-platform Python package manager and environment-management system which satisfies the above criteria.
 
-2. Once Anaconda has been installed, the next step requires to set up a virtual environment containing the open-source libraries that the processor requires during its execution. To this end we provide a YAML file, ```mat_builder.yml```, that can be used to set the environment up. More precisely, the user must first open an Anaconda powershell prompt. Then, the user must type in the prompt ```conda env create -f path\mat_builder.yml -n name_environment```, where ```path``` represents the path in which ```mat_builder.yml``` is located, while ```name_environment``` represents the name the user wants to assign to the virtual environment.
+2. Once Anaconda has been installed, the next step requires to set up a virtual environment containing the open-source libraries that the processor requires. To this end, we provide a YAML file, i.e., ```mat_builder.yml```, that can be used to set up the environment. The user must first open an Anaconda powershell prompt. Then, the user must type in the prompt ```conda env create -f path\mat_builder.yml -n name_environment```, where ```path``` represents the path in which ```mat_builder.yml``` is located, while ```name_environment``` represents the name the user wants to assign to the virtual environment.
 
-3.	Once the environment has been created, the user must activate it in the prompt by typing ```conda activate name_environment```. The user is now able to execute and use the processor.
+3.	Once the environment has been created, the user must activate it in the prompt by typing ```conda activate name_environment```.
 
 
 ## **Use of the semantic enrichment processor**
@@ -35,48 +35,45 @@ The semantic enrichment processor can be used in a variety of ways.
 First, one must open a command line and then activate the virtual environment that has been prepared during the installation procedure -- this can be done by typing ```conda activate name_environment```. 
 Once this is done, the user can:
 
-1. use the semantic enrichment processor locally via a UI interface. To this end, the user must type ```python mat_builder_ui_example.py```.
+1. use the semantic enrichment processor locally via a user interface. To this end, the user must type ```python mat_builder_ui_example.py```.
 In the command line it will then appear an URL pointing to the user interface that the user will be able to access with any web browser of preference. 
 We refer the reader to the deliverable 4.7, version 1, for an extensive walkthrough on how to use the user interface. The deliverable can be accessed [here](https://mobidatalab.eu/publications/).
-2. The functionalities of the various modules included in the processor can be also explicitly used in one's code. 
+
+2. The functionalities provided by the various modules included with the processor can also be used in one's own Python script. 
 To this end, we refer the reader to the example provided in the script ```mat_builder_cli_example.py```.
-3. Finally, to use the modules provided with the processor via API services, please we refer the reader
-to the Python scripts ```mat_builder_api_example.py```, which sets up the API
-  services associated with the modules, and the script ```examples_api_request.py```, which uses the aforementioned
-  services via API requests. 
+
+3. Finally, the functionalities of the modules provided with the processor can be used via API end-points. To this end, we refer the reader
+to the Python scripts ```mat_builder_api_example.py```, which sets up the API end-points associated with the various modules, and the script ```examples_api_request.py```, which uses the aforementioned end-points via API requests. 
 
 
 ## **MAT-building pipeline** and **modules**
 
 The semantic enrichment processor revolves around the notion of ***MAT-building pipeline***, which is a
-semantic enrichment process conducted according to a sequence of steps. Each step
-represents a specific macro-task and is implemented via a module that extends the
-``ModuleInterface`` abstract class. Currently, there are three core modules that have been
-included in ``MAT-Builder``'s current version: ```Preprocessing```, ```Segmentation```, and ```Enrichment```. To see how the modules can be used to set up an interactive MAT-building pipeline please see
-the script ``mat_builder_ui_example.py``. To see how the functionalities offered by these modules can be used within one's code, see the script ```mat_builder_cli_example.py```. 
-For more detailed information on the modules included with the semantic enrichment processor, see the 
-README.md within the ```core``` folder.
-
+semantic enrichment process conducted according to a sequence of steps. Each step represents a specific macro-task
+and is implemented via a module that extends the ``ModuleInterface`` abstract class. Currently, there are three modules that are of interest 
+for the project's purposes: ```Preprocessing```, ```Segmentation```, and ```Enrichment```. 
+To see how the modules can be used we refer the reader to the aforementioned example scripts.
+For detailed information on the modules, we refer the reader to the README.md within the ```core``` folder.
+In the following we provide a general overview on such modules. 
 
 The ``Preprocessing`` module takes in input a dataset of raw trajectories and let users:
+
 - remove outliers
 - remove trajectories with few points
 - compress trajectories
 
 in order to produce a dataset of preprocessed trajectories.
 
-The ``Preprocessing`` requires the raw trajectory dataset to be represented as a pandas DataFrame and have the following columns:
+The ``Preprocessing`` module requires the raw trajectory dataset to be stored in a pandas DataFrame and have the following columns:
 - ```traj_id```: trajectory ID (string)
 - ```user```: user ID (integer)
 - ```lat```: latitude of a trajectory sample (float)
 - ```lon```: longitude of a trajectory sample (float)
 - ```time```: timestamp of a sample (datetime64)
 
-The ``Segmentation`` module takes in input a set of preprocessed trajectories, and segments
-each trajectory into ***stop*** and ***move segments***.
+The ``Segmentation`` module takes in input a dataset of trajectories, and segments each trajectory into ***stop*** and ***move segments***. The dataset must be stored in a pandas DataFrame and have the same columns required by the ```Preprocessing``` module.
 
-The ``Enrichment`` module takes in input the preprocessed trajectories, as well as their stop and move segments, and enriches trajectories and trajectory users with aspects
-(or semantic dimensions). The aspects currently supported by the module are as follows:
+The ``Enrichment`` module takes in input a dataset of trajectories, as well as their stop and move segments, and enriches trajectories and trajectory users with several aspects (or semantic dimensions). The aspects currently supported by the module are as follows:
 - **Regularity**: stop segments are categorized into:
   - *systematic stops*: stops that fall in the same area more than a given number of times. They are augmented with the labels  *Home*, *Work* or *Other*.
   - *occasional stops*: stops that are not systematic.
@@ -116,4 +113,4 @@ The ``Enrichment`` module takes in input the preprocessed trajectories, as well 
 
 ## **Datasets**
 
-For more details on the datasets included with the semantic enrichment processor, please see the ```README.md``` in the ```datasets``` folder.
+For more details on the dataset included with the semantic enrichment processor, please see the ```README.md``` in the ```datasets``` folder.
