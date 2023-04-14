@@ -35,15 +35,15 @@ The semantic enrichment processor can be used in a variety of ways.
 First, one must open a command line and then activate the virtual environment that has been prepared during the installation procedure -- this can be done by typing ```conda activate name_environment```. 
 Once this is done, the user can:
 
-1. use the semantic enrichment processor locally via a user interface. To this end, the user must type ```python mat_builder_ui_example.py```.
+1. use the semantic enrichment processor locally via a user interface. To this end, the user must type ```python mat_builder_ui.py```.
 In the command line it will then appear an URL pointing to the user interface that the user will be able to access with any web browser of preference. 
 We refer the reader to the deliverable 4.7, version 1, for an extensive walkthrough on how to use the user interface. The deliverable can be accessed [here](https://mobidatalab.eu/publications/).
 
 2. The functionalities provided by the various modules included with the processor can also be used in one's own Python script. 
-To this end, we refer the reader to the example provided in the script ```mat_builder_cli_example.py```.
+To this end, we refer the reader to the example provided in the script ```mat_builder_cli.py```.
 
 3. Finally, the functionalities of the modules provided with the processor can be used via API end-points. To this end, we refer the reader
-to the Python scripts ```mat_builder_api_example.py```, which sets up the API end-points associated with the various modules, and the script ```examples_api_request.py```, which uses the aforementioned end-points via API requests. 
+to the Python scripts ```mat_builder_api.py```, which sets up the API end-points associated with the various modules, and the script ```examples_api_request.py```, which uses the aforementioned end-points via API requests. 
 
 
 ## **MAT-building pipeline** and **modules**
