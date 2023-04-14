@@ -4,7 +4,8 @@ import re
 from typing import Optional
 
 
-url_service = "http://127.0.0.1:8000/semantic/"
+# url_service = "http://127.0.0.1:8000/semantic/"
+url_service = "http://azureuser@semantic.westeurope.cloudapp.azure.com:8000/semantic/"
 
 
 def test_preprocessing_post(pathfile : str) -> Optional[str]:
@@ -137,7 +138,7 @@ def test_enrichment_get(task_id: str):
         print(res.json()['message'])
         return None
     else:
-        filename = "reuslts.ttl"
+        filename = "results.ttl"
         if "content-disposition" in res.headers.keys():
             filename = re.findall("filename=\"(.+)\"", res.headers['content-disposition'])[0]
         print(f"Writing received file to: {filename}")
@@ -148,14 +149,15 @@ def test_enrichment_get(task_id: str):
 def main() :
 
     # task_id = test_preprocessing_post('./datasets/rome/rome.parquet')
-    # test_preprocessing_get("8415ad562a324af99af4c35e9addbd24")
+    # test_preprocessing_get("dcdc83cfd0e245368d2fb4509ccdf5a8")
 
     # task_id = test_segmentation_post('./preprocessed_trajectories.parquet')
-    # test_segmentation_get('0fb08ebe68df42e489f9157b30c4c7ba')
+    # test_segmentation_get('723d02b33ef5432daad4aff44ad35e42')
 
     #test_enrichment_post('./preprocessed_trajectories.parquet', './moves.parquet', './stops.parquet', './datasets/rome/poi/pois.parquet',
     #                     './datasets/rome/tweets/tweets_rome.parquet', './datasets/rome/weather/weather_conditions.parquet')
-    test_enrichment_get("38d07e2f9c49419b8a949da46e026311")
+    test_enrichment_get("637b867f90a04b74a1b53688ec0ffeaf")
+
 
 if __name__ == '__main__':
     main()
