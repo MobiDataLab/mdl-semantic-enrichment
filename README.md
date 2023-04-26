@@ -46,7 +46,7 @@ To this end, we refer the reader to the example provided in the script ```mat_bu
 to the Python scripts ```mat_builder_api.py```, which sets up the API end-points associated with the various modules, and the script ```examples_api_request.py```, which uses the aforementioned end-points via API requests. 
 
 
-## **MAT-building pipeline** and **modules**
+## **MAT-building pipeline**, **modules** and **datasets**
 
 The semantic enrichment processor revolves around the notion of ***MAT-building pipeline***, which is a
 semantic enrichment process conducted according to a sequence of steps. Each step represents a specific macro-task
