@@ -1,3 +1,16 @@
+### SEMANTIC ENRICHMENT PROCESSOR API USE EXAMPLE ###
+#
+# Ensure that this script has access to the files of a dataset that can work with the processor.
+# This example uses the Rome dataset, which is also present in the official GitHub repository (although it must be decompressed).
+#
+# Ensure also that this script is accessing the semantic enrichment processor's correct IP -- you can set it up
+# in the "url_service" variable below.
+#
+# The script makes use of the 3 endpoints the semantic enrichment processor API exposes: preprocessing, segmentation, and enrichment.
+# To this end, we refer to the "main" function at the end of the script, and to the various functions used by the main, each of which
+# shows how to make POST and GET requests (i.e., which parameters and files must be passed) with the endpoints.
+
+
 import time
 
 import requests
@@ -221,7 +234,7 @@ def main() :
         req_code, stops_path, moves_path = test_segmentation_get(task_id)
 
         if req_code == 200:
-            print(f"Preprocessing GET request successful (task {task_id}, files received: {stops_path}, {moves_path})!")
+            print(f"Segmentation GET request successful (task {task_id}, files received: {stops_path}, {moves_path})!")
             waiting = False
         elif req_code == 404:
             print(f"Server is still processing the segmentation task {task_id} (code {req_code})")
