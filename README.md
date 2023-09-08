@@ -72,7 +72,7 @@ The ``Preprocessing`` module requires the raw trajectory dataset to be stored in
 - ```lon```: longitude of a trajectory sample (float)
 - ```time```: timestamp of a sample (datetime64)
 
-Please, refer to the ```dataset``` folder for an example of such dataset.
+Please, refer to the ```datasets``` folder for a viable example of such dataset.
 
 The ``Segmentation`` module takes in input a dataset of trajectories, and segments each trajectory into ***stop*** and ***move segments***. The dataset must be stored in a pandas DataFrame and have the same columns required by the ```Preprocessing``` module.
 
@@ -93,7 +93,8 @@ The ``Enrichment`` module takes in input a dataset of trajectories, as well as t
   - ```geometry```: POI geometry (GeoPandas geometry object)
   - ```category```: POI category (string)
     
-  For viable examples of POI datasets, please have a look at the datasets in the ```datasets``` folder.
+  For viable examples of POI datasets, please have a look at the datasets in the ```datasets``` folder. See also the ```misc``` folder for a notebook that
+  contains an example on how to generate a POI dataset from OpenStreetMap data for MAT-Builder.
 
 
 - **Move**: trajectories are enriched with the move segments. The segments can also be augmented with the transportation mean probably used.
@@ -105,7 +106,8 @@ The ``Enrichment`` module takes in input a dataset of trajectories, as well as t
   - ```TAVG_C```: average temperature in celsius (float).
   - ```DESCRIPTION```: weather conditions (string).
     
-  For viable examples of weather conditions datasets, please look at the datasets in the ```datasets``` folder.
+  For viable examples of weather conditions datasets, please look at the datasets in the ```datasets``` folder. See also the ```misc``` folder for a notebook that
+  contains an example on how to generate a weather dataset from Meteostat data for MAT-Builder.
 
 
 - **Social media** : trajectory users are enriched with their social media posts. Social media data must be provided via a pandas DataFrame stored according to 
@@ -114,6 +116,8 @@ The ``Enrichment`` module takes in input a dataset of trajectories, as well as t
   - ```text```: post text (string)
   - ```tweet_created```: timestamp of the tweet (datetime64)
   - ```uid```: identifier of the user who posted the tweet.
+ 
+  For a viable example of a social media dataset, please look at the datasets in the ```datasets``` folder.
     
   For viable examples of social media datasets, please look at the datasets in the ```datasets``` folder.
 
