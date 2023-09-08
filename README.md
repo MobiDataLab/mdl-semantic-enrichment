@@ -31,14 +31,13 @@ The semantic enrichment processor consists of a set of Python scripts (plus a se
 
 ## **Use of the semantic enrichment processor**
 
-The semantic enrichment processor can be used in a variety of ways.
+The semantic enrichment processor can be used in a variety of ways (extensive walkthroughs will be provided in the deliverable 4.8, which will be accessible [here](https://mobidatalab.eu/publications/). Below, we provide some brief explanations. 
 
 First, one must open a command line and then activate the virtual environment that has been prepared during the installation procedure -- this can be done by typing ```conda activate name_environment```. 
 Once this is done, the user can:
 
 1. use the semantic enrichment processor locally via an interactive user interface. To this end, the user must type ```python mat_builder_ui.py```.
-In the command line it will then appear an URL pointing to the user interface that the user will be able to access with any web browser of preference. 
-We refer the reader to the deliverable 4.7, version 1, for an extensive walkthrough on how to use the user interface. The deliverable can be accessed [here](https://mobidatalab.eu/publications/).
+In the command line it will then appear an URL pointing to the user interface that the user will be able to access with any web browser of preference.
 
 2. The functionalities of the modules provided with the processor can be accessed via API end-points. To this end, we refer the reader
 to the Python scripts ```mat_builder_api.py```, which sets up a server with the API end-points associated with the various modules, and the script ```examples_api_request.py```, which remotely access the aforementioned end-points via HTTP POST and GET requests. For more information on the API endpoints the user can use the server '\docs' endpoint.
