@@ -71,6 +71,7 @@ The ``Preprocessing`` module requires the raw trajectory dataset to be stored in
 - ```lat```: latitude of a trajectory sample (float)
 - ```lon```: longitude of a trajectory sample (float)
 - ```time```: timestamp of a sample (datetime64)
+
 Please, refer to the ```dataset``` folder for an example of such dataset.
 
 The ``Segmentation`` module takes in input a dataset of trajectories, and segments each trajectory into ***stop*** and ***move segments***. The dataset must be stored in a pandas DataFrame and have the same columns required by the ```Preprocessing``` module.
@@ -91,6 +92,7 @@ The ``Enrichment`` module takes in input a dataset of trajectories, as well as t
   - ```wikidata```: POI WikiData identifier (string)
   - ```geometry```: POI geometry (GeoPandas geometry object)
   - ```category```: POI category (string)
+    
   For viable examples of POI datasets, please have a look at the datasets in the ```datasets``` folder.
 
 
@@ -102,6 +104,7 @@ The ``Enrichment`` module takes in input a dataset of trajectories, as well as t
   - ```DATE```: date in which the weather observation was recorded (string or datetime64).
   - ```TAVG_C```: average temperature in celsius (float).
   - ```DESCRIPTION```: weather conditions (string).
+    
   For viable examples of weather conditions datasets, please look at the datasets in the ```datasets``` folder.
 
 
@@ -111,9 +114,10 @@ The ``Enrichment`` module takes in input a dataset of trajectories, as well as t
   - ```text```: post text (string)
   - ```tweet_created```: timestamp of the tweet (datetime64)
   - ```uid```: identifier of the user who posted the tweet.
+    
   For viable examples of social media datasets, please look at the datasets in the ```datasets``` folder.
 
 
 ## **Datasets**
 
-For more details on the dataset included with the semantic enrichment processor, please see the ```README.md``` in the ```datasets``` folder.
+For more details on the datasets included with the semantic enrichment processor, please see the ```README.md``` in the ```datasets``` folder. At the moment, a dataset related to the city of Rome is provided.
