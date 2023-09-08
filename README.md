@@ -32,21 +32,22 @@ The semantic enrichment processor consists of a set of Python scripts (plus a se
 ## **Use of the semantic enrichment processor**
 
 The semantic enrichment processor can be used in a variety of ways.
+
 First, one must open a command line and then activate the virtual environment that has been prepared during the installation procedure -- this can be done by typing ```conda activate name_environment```. 
 Once this is done, the user can:
 
-1. use the semantic enrichment processor locally via a user interface. To this end, the user must type ```python mat_builder_ui.py```.
+1. use the semantic enrichment processor locally via an interactive user interface. To this end, the user must type ```python mat_builder_ui.py```.
 In the command line it will then appear an URL pointing to the user interface that the user will be able to access with any web browser of preference. 
 We refer the reader to the deliverable 4.7, version 1, for an extensive walkthrough on how to use the user interface. The deliverable can be accessed [here](https://mobidatalab.eu/publications/).
 
-2. The functionalities provided by the various modules included with the processor can also be used in one's own Python script. 
+2. The functionalities of the modules provided with the processor can be accessed via API end-points. To this end, we refer the reader
+to the Python scripts ```mat_builder_api.py```, which sets up a server with the API end-points associated with the various modules, and the script ```examples_api_request.py```, which remotely access the aforementioned end-points via HTTP POST and GET requests. For more information on the API endpoints the user can use the server '\docs' endpoint.
+
+3. Finally, the functionalities provided by the various modules included with the processor can also be used in one's own Python script. 
 To this end, we refer the reader to the example provided in the script ```mat_builder_cli.py```.
 
-3. Finally, the functionalities of the modules provided with the processor can be used via API end-points. To this end, we refer the reader
-to the Python scripts ```mat_builder_api.py```, which sets up the API end-points associated with the various modules, and the script ```examples_api_request.py```, which uses the aforementioned end-points via API requests. 
 
-
-## **MAT-building pipeline**, **modules** and **datasets**
+## Overview on **MAT-building pipeline**, **modules** and **datasets**
 
 The semantic enrichment processor revolves around the notion of ***MAT-building pipeline***, which is a
 semantic enrichment process conducted according to a sequence of steps. Each step represents a specific macro-task
@@ -70,6 +71,7 @@ The ``Preprocessing`` module requires the raw trajectory dataset to be stored in
 - ```lat```: latitude of a trajectory sample (float)
 - ```lon```: longitude of a trajectory sample (float)
 - ```time```: timestamp of a sample (datetime64)
+Please, refer to the ```dataset``` folder for an example of such dataset.
 
 The ``Segmentation`` module takes in input a dataset of trajectories, and segments each trajectory into ***stop*** and ***move segments***. The dataset must be stored in a pandas DataFrame and have the same columns required by the ```Preprocessing``` module.
 
@@ -109,6 +111,7 @@ The ``Enrichment`` module takes in input a dataset of trajectories, as well as t
   - ```text```: post text (string)
   - ```tweet_created```: timestamp of the tweet (datetime64)
   - ```uid```: identifier of the user who posted the tweet.
+  For viable examples of social media datasets, please look at the datasets in the ```datasets``` folder.
 
 
 ## **Datasets**
