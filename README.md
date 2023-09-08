@@ -118,8 +118,6 @@ The ``Enrichment`` module takes in input a dataset of trajectories, as well as t
   - ```uid```: identifier of the user who posted the tweet.
  
   For a viable example of a social media dataset, please look at the datasets in the ```datasets``` folder.
-    
-  For viable examples of social media datasets, please look at the datasets in the ```datasets``` folder.
 
 
 ## **Datasets**
